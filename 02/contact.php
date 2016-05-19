@@ -13,29 +13,29 @@
     <!--姓のテキストボックスを表示 -->
         <p>
             <label for="name1">姓：</label>
-            <input type="textbox" name="name1" id="neme1" size="20">
+            <input id="neme1" type="textbox" name="name1" size="20">
         </p>
     <!--名のテキストボックスを表示 -->
         <p>
-            <label for="name1">名：</label>
-            <input type="textbox" name="name2" id="name2" size="20"></p>
+            <label for="name2">名：</label>
+            <input id="name2" type="textbox" name="name2" size="20"></p>
     <!--性別のラジオボタン-->
         <p>
             性別：
         <!--ラジオボタン（男性）-->
-            <input id="rd_man" type="radio" name="rd" value="man" checked>
+            <input id="rd_man" type="radio" name="rd" value="男性" checked>
             <label for="rd_man">男性</label>
         <!--ラジオボタン（女性）-->
-            <input id="rd_woman" type="radio" name="rd" value="woman">
+            <input id="rd_woman" type="radio" name="rd" value="女性">
             <label for="rd_woman">女性</label>
         <!--ラジオボタン（不明）-->
-            <input id="rd_unknown" type="radio" name="rd" value="unknown">
+            <input id="rd_unknown" type="radio" name="rd" value="不明">
             <label for="rd_unknown">不明</label>
         </p>
     <!--住所のテキストボックス-->
         <p>
             <label for="adress">住所：</label>
-            <input type="textbox" name="adress" id="adress" size="20"></p>
+            <input id="adress" type="textbox" name="adress" size="20"></p>
     <!--電話番号のテキストボックス-->
         <p>
             お電話番号：
@@ -57,6 +57,11 @@
             @
         <!--ドメイン-->
             <input type="textbox" name="domain" size="10">
+        </p>
+    <!--どこで知ったか　チェックボックス-->
+        <p>
+            <label for="know">どこで知ったか：</label>
+            <textarea id="know" cols="20" rows="5" name="know"></textarea>
         </p>
 
         <!--送信ボタン-->
