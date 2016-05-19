@@ -23,7 +23,7 @@
         <p>
             性別：
         <!--ラジオボタン（男性）-->
-            <input id="rd_man" type="radio" name="rd" value="man">
+            <input id="rd_man" type="radio" name="rd" value="man" checked>
             <label for="rd_man">男性</label>
         <!--ラジオボタン（女性）-->
             <input id="rd_woman" type="radio" name="rd" value="woman">
@@ -39,15 +39,26 @@
     <!--電話番号のテキストボックス-->
         <p>
             お電話番号：
-            <!--上三桁-->
+        <!--上三桁-->
             <input type="textbox" name="phon_first" size="5">
             -
-            <!--四桁-->
+        <!--四桁-->
             <input type="textbox" name="phon_second" size="5">
             -
-            <!--下四桁-->
+        <!--下四桁-->
             <input type="textbox" name="phon_third" size="5">
         </p>
+    <!--メールアドレス-->
+        <p>
+            メールアドレス：
+        <!--ローカル部-->
+            <input type="textbox" name="local" size="10">
+        <!--アットマーク-->
+            @
+        <!--ドメイン-->
+            <input type="textbox" name="domain" size="10">
+        </p>
+
         <!--送信ボタン-->
             <p><input type="submit"></p>
 
