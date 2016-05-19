@@ -11,11 +11,17 @@
     <!--ここから中央揃え-->
         <center>
     <!--姓のテキストボックスを表示 -->
-        <p>姓：<input type="textbox" name="name1" size="20"></p>
+        <p>
+            <label for="name1">姓：</label>
+            <input type="textbox" name="name1" id="neme1" size="20">
+        </p>
     <!--名のテキストボックスを表示 -->
-        <p>名：<input type="textbox" name="name2" size="20"></p>
+        <p>
+            <label for="name1">名：</label>
+            <input type="textbox" name="name2" id="name2" size="20"></p>
     <!--性別のラジオボタン-->
         <p>
+            性別：
         <!--ラジオボタン（男性）-->
             <input id="rd_man" type="radio" name="rd" value="man">
             <label for="rd_man">男性</label>
@@ -27,7 +33,21 @@
             <label for="rd_unknown">不明</label>
         </p>
     <!--住所のテキストボックス-->
-        <p>住所:<input type="textbox" name="adress" size="20"></p>
+        <p>
+            <label for="adress">住所：</label>
+            <input type="textbox" name="adress" id="adress" size="20"></p>
+    <!--電話番号のテキストボックス-->
+        <p>
+            お電話番号：
+            <!--上三桁-->
+            <input type="textbox" name="phon_first" size="5">
+            -
+            <!--四桁-->
+            <input type="textbox" name="phon_second" size="5">
+            -
+            <!--下四桁-->
+            <input type="textbox" name="phon_third" size="5">
+        </p>
         <!--送信ボタン-->
             <p><input type="submit"></p>
 
