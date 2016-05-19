@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title> Fomr_課題 </title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
