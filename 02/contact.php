@@ -7,10 +7,16 @@
 </head>
 
 <body>
+<!--ここから中央揃え-->
+    <center>
+<!--見出し-->
+<header>
+    <h1>お問い合わせ</h1>
+</header>
+
+<main>
     <form action="result.php" method="post">
-    <!--ここから中央揃え-->
-        <center>
-    <!--姓のテキストボックスを表示 -->
+        <!--姓のテキストボックスを表示 -->
         <p>
             <label for="name1">姓：</label>
             <input id="neme1" type="textbox" name="name1" size="20">
@@ -74,19 +80,28 @@
 
     <!--質問カテゴリ　セレクトボックスで選択-->
         <p>
-            <label for="question">質問カテゴリ：</label>
-            <select id="question" name="question">
+            <label for="question_category">質問カテゴリ：</label>
+            <select id="question_category" name="question_category">
                 <option>雑誌</option>
                 <option>新聞</option>
                 <option>Web</option>
                 <option>その他</option>
             </select>
         </p>
-        <!--送信ボタン-->
-            <p><input type="submit"></p>
 
-    <!--ここまで中央揃え-->
-        </center>
+    <!--質問内容　テキストエリアで入力-->
+        <p>
+            <label for="question">質問内容：</label>
+            <textarea id="question" cols="20" rows="5" name="question"></textarea>
+        </p>
+</main>
+
+<footer>
+    <!--送信ボタン-->
+        <p><input type="submit"></p>
+</footre>
+<!--ここまで中央揃え-->
+    </center>
 
     </form>
 </body>
