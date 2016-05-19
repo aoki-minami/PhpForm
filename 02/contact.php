@@ -15,10 +15,13 @@
             <label for="name1">姓：</label>
             <input id="neme1" type="textbox" name="name1" size="20">
         </p>
+
     <!--名のテキストボックスを表示 -->
         <p>
             <label for="name2">名：</label>
-            <input id="name2" type="textbox" name="name2" size="20"></p>
+            <input id="name2" type="textbox" name="name2" size="20">
+        </p>
+
     <!--性別のラジオボタン-->
         <p>
             性別：
@@ -32,10 +35,13 @@
             <input id="rd_unknown" type="radio" name="rd" value="不明">
             <label for="rd_unknown">不明</label>
         </p>
+
     <!--住所のテキストボックス-->
         <p>
             <label for="adress">住所：</label>
-            <input id="adress" type="textbox" name="adress" size="20"></p>
+            <input id="adress" type="textbox" name="adress" size="20">
+        </p>
+
     <!--電話番号のテキストボックス-->
         <p>
             お電話番号：
@@ -48,6 +54,7 @@
         <!--下四桁-->
             <input type="textbox" name="phon_third" size="5">
         </p>
+
     <!--メールアドレス-->
         <p>
             メールアドレス：
@@ -58,12 +65,23 @@
         <!--ドメイン-->
             <input type="textbox" name="domain" size="10">
         </p>
+
     <!--どこで知ったか　チェックボックス-->
         <p>
             <label for="know">どこで知ったか：</label>
             <textarea id="know" cols="20" rows="5" name="know"></textarea>
         </p>
 
+    <!--質問カテゴリ　セレクトボックスで選択-->
+        <p>
+            <label for="question">質問カテゴリ：</label>
+            <select id="question" name="question">
+                <option>雑誌</option>
+                <option>新聞</option>
+                <option>Web</option>
+                <option>その他</option>
+            </select>
+        </p>
         <!--送信ボタン-->
             <p><input type="submit"></p>
 
