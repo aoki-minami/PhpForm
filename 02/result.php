@@ -43,16 +43,23 @@
     <tr>
     <th scope="row">メールアドレス</th>
     <td>
-        <?php echo $_POST['local'] . "@" . $_POST['domain'] . "<br>";?>
+        <?php echo $_POST['local'] . "@" . $_POST['domain'] . "<br>"; ?>
     </td>
     </tr>
 <!--どこで知ったか　チェックボックス-->
     <tr>
     <th scope="row">どこで知ったか</th>
     <td>
-        <?php echo $_POST['ch'] . "<br>";?>
+        <?php echo $_POST['ch'] . "<br>"; ?>
     </td>
     </tr>
+<!--質問カテゴリ　セレクトボックスで選択-->
+        <tr>
+        <th scope="row">質問カテゴリ</th>
+        <td>
+            <?php echo $_POST['question_category'] . "<br>"; ?>
+        </td>
+        </tr>
 
 
 <?php
