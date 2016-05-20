@@ -30,12 +30,21 @@ table.type th{
     /*テキストの項目の右と下に境界線を引く*/
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    /*テキストの幅を 130px　に指定*/
+    width: 130px;
+    /*境界内の余白を +10px*/
+    padding: 10px
+
 }
 
 table.type td{
     /*入力フォームの右と下に境界線を引く*/
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    /*入力フォームの幅を 375px　に指定*/
+    width: 375px;
+    /*境界内の余白を +10px*/
+    padding: 10px;
 }
 
 

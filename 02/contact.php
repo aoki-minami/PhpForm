@@ -63,13 +63,13 @@
         <th scope="row">お電話番号</th>
         <td>
         <!--上三桁-->
-            <input type="textbox" name="phon_first">
+            <input type="textbox" name="phon_first" size="1">
             -
         <!--四桁-->
-            <input type="textbox" name="phon_second">
+            <input type="textbox" name="phon_second" size="1">
             -
         <!--下四桁-->
-            <input type="textbox" name="phon_third">
+            <input type="textbox" name="phon_third" size="1">
         </td>
         </tr>
 
@@ -90,7 +90,7 @@
         <tr>
         <th scope="row">どこで知ったか</th>
         <td>
-            <textarea id="know" cols="20" rows="5" name="know"></textarea>
+            <textarea id="know" cols="50" rows="5" name="know"></textarea>
         </td>
         </tr>
 
@@ -111,7 +111,7 @@
         <tr>
         <th scope="row">質問内容</th>
         <td>
-            <textarea id="question" cols="20" rows="5" name="question"></textarea>
+            <textarea id="question" cols="50" rows="5" name="question"></textarea>
         </td>
         </tr>
 </table>
