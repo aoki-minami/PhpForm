@@ -22,8 +22,10 @@ table.type{
     /*テキストを左寄せ*/
     text-align: left;
     /*領域内の左と上に境界線を引く*/
-    border-left: 1px solid #ccc;
+    border-left: 2px solid #369;
     border-top: 1px solid #ccc;
+    /*隣接するセルのボーダーを重ねて表示*/
+    border-collapse: collapse;
 }
 
 table.type th{
@@ -34,7 +36,6 @@ table.type th{
     width: 130px;
     /*境界内の余白を +10px*/
     padding: 10px
-
 }
 
 table.type td{
