@@ -22,7 +22,7 @@
         <tr>
         <th scope="row">姓</th>
         <td>
-            <input id="neme1" type="textbox" name="name1">
+            <input type="textbox" name="name1">
         </td>
         </tr>
 
@@ -30,7 +30,7 @@
         <tr>
         <th scope="row">名</th>
         <td>
-            <input id="name2" type="textbox" name="name2">
+            <input type="textbox" name="name2">
         </td>
         </tr>
 

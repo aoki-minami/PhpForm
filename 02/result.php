@@ -16,8 +16,14 @@
         <?php echo $_POST['name1'] . " " . $_POST['name2'] . "<br>"; ?>
     </td>
     </tr>
-
-
+<!--性別のラジオボタンの値を表示-->
+    <tr>
+    <th scope="row">性別</th>
+    <td>
+        <?php echo $_POST['rd'] . "<br>"; ?>
+    </td>
+    </tr>
+ 
 
 
 <?php
