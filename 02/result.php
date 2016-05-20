@@ -89,7 +89,7 @@
     <tr>
     <th scope="row">どこで知ったか</th>
     <td>
-        <?php var_dump($_POST['ch']); ?>
+        <?php var_dump($_POST['ch1']); ?>
     </td>
     </tr>
 <!--質問カテゴリ　セレクトボックスで選択-->
