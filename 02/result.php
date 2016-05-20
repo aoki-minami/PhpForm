@@ -17,12 +17,13 @@
     <th scope="row">姓名</th>
     <td>
         <?php
+        // 姓の値が入っているかチェック
             if($_POST['name1'] !== ""){
                 echo $_POST['name1'] . " ";
             }else{
                 echo "姓を入力してください" . " ";
             }
-
+        // 名の値が入っているかチェック
             if($_POST['name2'] !== ""){
                 echo $_POST['name1'] . " ";
             }else{
@@ -42,7 +43,14 @@
     <tr>
     <th scope="row">住所</th>
     <td>
-        <?php echo $_POST['adress'] . "<br>"; ?>
+        <?php
+        // 住所の値が入っているかチェック
+            if($_POST['adress'] !== ""){
+                echo $_POST['adress'] . " ";
+            }else{
+                echo "住所を入力してください" . " ";
+            }
+        ?>
     </td>
     </tr>
 <!--電話番号のテキストボックスの値を出力-->
