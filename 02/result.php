@@ -58,7 +58,16 @@
     <th scope="row">お電話番号</th>
     <td>
         <?php
-            echo $_POST['phon_first'] . "-" . $_POST['phon_second'] . "-" . $_POST['phon_third'] . "<br>";
+        // 電話番号が入っているかチェック
+            if($_POST['phon_first'] !== "" &&
+                $_POST['phon_second'] !== "" &&
+                $_POST['phon_third'] !== ""){
+                echo $_POST['phon_first'] . "-" .
+                    $_POST['phon_second'] . "-" .
+                    $_POST['phon_third'];
+            }else{
+                echo "お電話番号を入力してください";
+            }
         ?>
     </td>
     </tr>
