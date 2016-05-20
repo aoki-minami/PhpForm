@@ -8,6 +8,9 @@
 </head>
 
 <body>
+<h1>確認画面</h1>
+
+<center>
 <table class="type">
 <!--姓名のテキストボックスの値を表示-->
     <tr>
@@ -67,19 +70,14 @@
             <?php echo $_POST['question'] . "<br>"; ?>
         </td>
         </tr>
-
-<?php
-echo "姓名　：　" . $_POST['name1'] . " " . $_POST['name2'] . "<br>";
-echo "性別　：　" . $_POST['rd'] . "<br>";
-echo "住所　：　" . $_POST['adress'] . "<br>";
-echo "電話番号　：　" . $_POST['phon_first'] . "-" . $_POST['phon_second'] . "-" . $_POST['phon_third'] . "<br>";
-echo "メールアドレス　：　" . $_POST['local'] . "@" . $_POST['domain'] . "<br>";
-echo "どこでしったか　：　" . $_POST['ch'] . "<br>";
-echo "質問カテゴリ　：　" . $_POST['question_category'] . "<br>";
-echo "質問内容　：　" . $_POST['question'] . "<br>";
-//var_dump($_POST);
-?>
-
 </table>
+
+<footer>
+<!--戻るボタン-->
+<form action="contact.php" method="post">
+    <input type="submit" value="戻る">
+</form>
+</footer>
+</canter>
 </body>
 </html>

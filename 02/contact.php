@@ -54,7 +54,7 @@
         <tr>
         <th scope="row">住所</th>
         <td>
-            <input id="adress" type="textbox" name="adress">
+            <input type="textbox" name="adress">
         </td>
         </tr>
 
@@ -106,7 +106,7 @@
         <tr>
         <th scope="row">質問カテゴリ</th>
         <td>
-            <select id="question_category" name="question_category">
+            <select name="question_category">
                 <option>商品について</option>
                 <option>その他</option>
             </select>
@@ -117,7 +117,7 @@
         <tr>
         <th scope="row">質問内容</th>
         <td>
-            <textarea id="question" cols="50" rows="5" name="question"></textarea>
+            <textarea cols="50" rows="5" name="question"></textarea>
         </td>
         </tr>
 </table>
@@ -125,7 +125,8 @@
 
 <footer>
     <!--送信ボタン-->
-        <p><input type="submit"></p>
+        <input type="submit" name="submit" value="send">
+
 </footre>
 
 </form>
