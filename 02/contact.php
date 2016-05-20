@@ -90,10 +90,13 @@
         <tr>
         <th scope="row">どこで知ったか</th>
         <td>
+        <!--チェックボックス 1-->
             <input id="ch_magazin" type="checkbox" name="ch" value="雑誌">
             <label for="ch_magazin">雑誌</label>
+        <!--チェックボックス 2-->
             <input id="ch_web" type="checkbox" name="ch" value="Web">
             <label for="ch_web">Web</label>
+        <!--チェックボックス 3-->
             <input id="ch_other" type="checkbox" name="ch" value="その他">
             <label for="ch_other">その他</label>
         </td>
@@ -126,6 +129,7 @@
 </footre>
 
 </form>
+</center>
 </body>
 
 </html>
