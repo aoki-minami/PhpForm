@@ -75,7 +75,14 @@
     <tr>
     <th scope="row">メールアドレス</th>
     <td>
-        <?php echo $_POST['local'] . "@" . $_POST['domain'] . "<br>"; ?>
+        <?php
+        // メールアドレスの値が入っているかチェック
+            if($_POST['local'] !== "" && $_POST['domain'] !== ""){
+                echo $_POST['adress'] . "@" . $_POST['domain'];
+            }else{
+                echo "メールアドレスを入力してください" . " ";
+            }
+        ?>
     </td>
     </tr>
 <!--どこで知ったか　チェックボックス-->
