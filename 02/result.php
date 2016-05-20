@@ -46,6 +46,13 @@
         <?php echo $_POST['local'] . "@" . $_POST['domain'] . "<br>";?>
     </td>
     </tr>
+<!--どこで知ったか　チェックボックス-->
+    <tr>
+    <th scope="row">どこで知ったか</th>
+    <td>
+        <?php echo $_POST['ch'] . "<br>";?>
+    </td>
+    </tr>
 
 
 <?php
