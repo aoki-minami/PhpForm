@@ -89,21 +89,28 @@
     <tr>
     <th scope="row">どこで知ったか</th>
     <td>
-        <?php echo $_POST['ch'] . "<br>"; ?>
+        <?php var_dump($_POST['ch']); ?>
     </td>
     </tr>
 <!--質問カテゴリ　セレクトボックスで選択-->
         <tr>
         <th scope="row">質問カテゴリ</th>
         <td>
-            <?php echo $_POST['question_category'] . "<br>"; ?>
+            <?php echo $_POST['question_category']; ?>
         </td>
         </tr>
 <!--質問内容　テキストエリアで入力-->
         <tr>
         <th scope="row">質問内容</th>
         <td>
-            <?php echo $_POST['question'] . "<br>"; ?>
+            <?php
+            // 質問内容の値が入っているかチェック
+                if($_POST['question'] !== ""){
+                    echo $_POST['question'];
+                }else{
+                    echo "質問内容を入力してください";
+                }
+            ?>
         </td>
         </tr>
 </table>
