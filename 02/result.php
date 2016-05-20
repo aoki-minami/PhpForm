@@ -30,13 +30,20 @@
         <?php echo $_POST['adress'] . "<br>"; ?>
     </td>
     </tr>
-<!--電話番号のテキストボックス-->
+<!--電話番号のテキストボックスの値を出力-->
     <tr>
     <th scope="row">お電話番号</th>
     <td>
         <?php
             echo $_POST['phon_first'] . "-" . $_POST['phon_second'] . "-" . $_POST['phon_third'] . "<br>";
         ?>
+    </td>
+    </tr>
+<!--メールアドレスの値を出力-->
+    <tr>
+    <th scope="row">メールアドレス</th>
+    <td>
+        <?php echo $_POST['local'] . "@" . $_POST['domain'] . "<br>";?>
     </td>
     </tr>
 
