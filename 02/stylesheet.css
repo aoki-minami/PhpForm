@@ -9,6 +9,7 @@
 /* ヘッダー
 --------------------------------------------------------------------------*/
 h1{
+    /*見出しを中央揃え*/
     text-align: center;
 }
 
@@ -18,17 +19,21 @@ h1{
 /* メインコンテンツ
 --------------------------------------------------------------------------*/
 table.type{
+    /*テキストを左寄せ*/
     text-align: left;
+    /*領域内の左と上に境界線を引く*/
     border-left: 1px solid #ccc;
     border-top: 1px solid #ccc;
 }
 
 table.type th{
+    /*テキストの項目の右と下に境界線を引く*/
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
 
 table.type td{
+    /*入力フォームの右と下に境界線を引く*/
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }

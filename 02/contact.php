@@ -18,22 +18,26 @@
 <main>
 <table class="type">
     <form action="result.php" method="post">
-        <!--姓のテキストボックスを表示 -->
+    <!--姓のテキストボックスを表示 -->
         <tr>
-            <th scope="row">姓</th>
-            <td><input id="neme1" type="textbox" name="name1"></td>
+        <th scope="row">姓</th>
+        <td>
+            <input id="neme1" type="textbox" name="name1">
+        </td>
         </tr>
 
     <!--名のテキストボックスを表示 -->
         <tr>
-            <th scope="row">名</th>
-            <td><input id="name2" type="textbox" name="name2"></td>
+        <th scope="row">名</th>
+        <td>
+            <input id="name2" type="textbox" name="name2">
+        </td>
         </tr>
 
     <!--性別のラジオボタン-->
         <tr>
-            <th scope="row">性別</th>
-            <td>
+        <th scope="row">性別</th>
+        <td>
         <!--ラジオボタン（男性）-->
             <input id="rd_man" type="radio" name="rd" value="男性" checked>
             <label for="rd_man">男性</label>
@@ -48,14 +52,16 @@
 
     <!--住所のテキストボックス-->
         <tr>
-            <th scope="row">住所</th>
-            <td><input id="adress" type="textbox" name="adress"></td>
+        <th scope="row">住所</th>
+        <td>
+            <input id="adress" type="textbox" name="adress">
+        </td>
         </tr>
 
     <!--電話番号のテキストボックス-->
         <tr>
-            <th scope="row">お電話番号</th>
-            <td>
+        <th scope="row">お電話番号</th>
+        <td>
         <!--上三桁-->
             <input type="textbox" name="phon_first">
             -
@@ -64,13 +70,13 @@
             -
         <!--下四桁-->
             <input type="textbox" name="phon_third">
-            </td>
+        </td>
         </tr>
 
     <!--メールアドレス-->
         <tr>
-            <th scope="row">メールアドレス</th>
-            <td>
+        <th scope="row">メールアドレス</th>
+        <td>
         <!--ローカル部-->
             <input type="textbox" name="local">
         <!--アットマーク-->
@@ -82,16 +88,16 @@
 
     <!--どこで知ったか　チェックボックス-->
         <tr>
-            <th scope="row">どこで知ったか</th>
-            <td>
+        <th scope="row">どこで知ったか</th>
+        <td>
             <textarea id="know" cols="20" rows="5" name="know"></textarea>
-            </td>
+        </td>
         </tr>
 
     <!--質問カテゴリ　セレクトボックスで選択-->
         <tr>
-            <th scope="row">質問カテゴリ</th>
-            <td>
+        <th scope="row">質問カテゴリ</th>
+        <td>
             <select id="question_category" name="question_category">
                 <option>雑誌</option>
                 <option>新聞</option>
@@ -103,8 +109,8 @@
 
     <!--質問内容　テキストエリアで入力-->
         <tr>
-            <th scope="row">質問内容</th>
-            <td>
+        <th scope="row">質問内容</th>
+        <td>
             <textarea id="question" cols="20" rows="5" name="question"></textarea>
         </td>
         </tr>
