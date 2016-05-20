@@ -30,7 +30,15 @@
         <?php echo $_POST['adress'] . "<br>"; ?>
     </td>
     </tr>
-
+<!--電話番号のテキストボックス-->
+    <tr>
+    <th scope="row">お電話番号</th>
+    <td>
+        <?php
+            echo $_POST['phon_first'] . "-" . $_POST['phon_second'] . "-" . $_POST['phon_third'] . "<br>";
+        ?>
+    </td>
+    </tr>
 
 
 <?php
