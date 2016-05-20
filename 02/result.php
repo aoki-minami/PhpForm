@@ -60,7 +60,13 @@
             <?php echo $_POST['question_category'] . "<br>"; ?>
         </td>
         </tr>
-
+<!--質問内容　テキストエリアで入力-->
+        <tr>
+        <th scope="row">質問内容</th>
+        <td>
+            <?php echo $_POST['question'] . "<br>"; ?>
+        </td>
+        </tr>
 
 <?php
 echo "姓名　：　" . $_POST['name1'] . " " . $_POST['name2'] . "<br>";
