@@ -17,7 +17,7 @@
 
 <main>
 <table class="type">
-    <form action="result.php" method="post">
+<form action="result.php" method="post">
     <!--姓のテキストボックスを表示 -->
         <tr>
         <th scope="row">姓</th>
@@ -90,7 +90,12 @@
         <tr>
         <th scope="row">どこで知ったか</th>
         <td>
-            <textarea id="know" cols="50" rows="5" name="know"></textarea>
+            <input id="ch_magazin" type="checkbox" name="ch" value="雑誌">
+            <label for="ch_magazin">雑誌</label>
+            <input id="ch_web" type="checkbox" name="ch" value="Web">
+            <label for="ch_web">Web</label>
+            <input id="ch_other" type="checkbox" name="ch" value="その他">
+            <label for="ch_other">その他</label>
         </td>
         </tr>
 
@@ -99,9 +104,7 @@
         <th scope="row">質問カテゴリ</th>
         <td>
             <select id="question_category" name="question_category">
-                <option>雑誌</option>
-                <option>新聞</option>
-                <option>Web</option>
+                <option>商品について</option>
                 <option>その他</option>
             </select>
         </td>
@@ -121,10 +124,8 @@
     <!--送信ボタン-->
         <p><input type="submit"></p>
 </footre>
-<!--ここまで中央揃え-->
-    </center>
 
-    </form>
+</form>
 </body>
 
 </html>
