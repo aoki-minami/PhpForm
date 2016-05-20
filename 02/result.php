@@ -16,7 +16,19 @@
     <tr>
     <th scope="row">姓名</th>
     <td>
-        <?php echo $_POST['name1'] . " " . $_POST['name2'] . "<br>"; ?>
+        <?php
+            if($_POST['name1'] !== ""){
+                echo $_POST['name1'] . " ";
+            }else{
+                echo "姓を入力してください" . " ";
+            }
+
+            if($_POST['name2'] !== ""){
+                echo $_POST['name1'] . " ";
+            }else{
+                echo "名を入力してください";
+            }
+        ?>
     </td>
     </tr>
 <!--性別のラジオボタンの値を表示-->
