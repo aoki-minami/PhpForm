@@ -56,7 +56,6 @@
         <tr>
             <th scope="row">お電話番号</th>
             <td>
-            <p>
         <!--上三桁-->
             <input type="textbox" name="phon_first">
             -
@@ -65,7 +64,6 @@
             -
         <!--下四桁-->
             <input type="textbox" name="phon_third">
-            </p>
             </td>
         </tr>
 
