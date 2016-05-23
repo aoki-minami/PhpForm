@@ -80,7 +80,7 @@
             if($_POST['local'] !== "" && $_POST['domain'] !== ""){
                 echo $_POST['adress'] . "@" . $_POST['domain'];
             }else{
-                echo "メールアドレスを入力してください" . " ";
+                echo "メールアドレスを入力してください";
             }
         ?>
     </td>
@@ -89,7 +89,15 @@
     <tr>
     <th scope="row">どこで知ったか</th>
     <td>
-        <?php var_dump($_POST['ch1']); ?>
+        <?php
+        // どこで知ったkの値が入っているかチェック
+            $check = $_POST["ch"];
+            foreach($check as $value){
+                if($check !== ""){
+                    echo $value . " ";
+                }
+            }
+        ?>
     </td>
     </tr>
 <!--質問カテゴリ　セレクトボックスで選択-->
