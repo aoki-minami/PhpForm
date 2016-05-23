@@ -58,15 +58,30 @@
     <th scope="row">お電話番号</th>
     <td>
         <?php
+            $phon = $_POST["phon"];
+            $flg_empty = 0;
+            $flg_half  = 0;
         // 電話番号が入っているかチェック
-            if($_POST['phon_first'] !== "" &&
-                $_POST['phon_second'] !== "" &&
-                $_POST['phon_third'] !== ""){
-                echo $_POST['phon_first'] . "-" .
-                    $_POST['phon_second'] . "-" .
-                    $_POST['phon_third'];
-            }else{
-                echo "お電話番号を入力してください";
+            foreach($phon as $phon_value){
+                if($phon_value !== ""){
+                        $flg_empty++;
+                }else{
+                    echo "お電話番号を入力してください";
+                    break;
+                }
+            }
+        // 半角かどうかチェック
+            foreach($phon as $phon_value){
+                if(mb_strlen($phon_value, "UTF-8") === mb_strwidth($phon_value, "UTF-8") ){
+                    $flg_half++;
+                }else{
+                    echo "半角で入力してください";
+                    break;
+                }
+            }
+        // 条件が全て満たせていれば表示
+            if($flg_empty === 3 && $flg_half === 3){
+                echo $phon[0] . "-" . $phon[1] . "-" . $phon[2];
             }
         ?>
     </td>

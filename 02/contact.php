@@ -63,13 +63,13 @@
         <th scope="row">お電話番号　(半角入力)</th>
         <td>
         <!--上三桁-->
-            <input type="textbox" name="phon_first" size="1">
+            <input type="textbox" name="phon[]" size="1">
             -
         <!--四桁-->
-            <input type="textbox" name="phon_second" size="1">
+            <input type="textbox" name="phon[]" size="1">
             -
         <!--下四桁-->
-            <input type="textbox" name="phon_third" size="1">
+            <input type="textbox" name="phon[]" size="1">
         </td>
         </tr>
 
