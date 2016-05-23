@@ -1,3 +1,10 @@
+<?php
+    // セッション生成
+    session_start();
+
+    $_SESSTION['name1'] = "";
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -8,10 +15,14 @@
 </head>
 
 <body>
-<h1>確認画面</h1>
+<header>
+    <h1>確認画面</h1>
+</header>
 
 <center>
+<main>
 <table class="type">
+
 <!--姓名のテキストボックスの値を表示-->
     <tr>
     <th scope="row">姓名</th>
@@ -20,6 +31,8 @@
         // 姓の値が入っているかチェック
             if($_POST['name1'] !== ""){
                 echo $_POST['name1'] . " ";
+                $_SESSTION['name1'] = $_POST['name1'];
+                //echo $_SESSTION['name1'];
             }else{
                 echo "姓を入力してください" . " ";
             }
@@ -58,7 +71,7 @@
     <th scope="row">お電話番号</th>
     <td>
         <?php
-            $phon = $_POST["phon"];
+            $phon = $_POST['phon'];
             $flg_empty = 0;
             $flg_half  = 0;
         // 電話番号が入っているかチェック
@@ -146,7 +159,7 @@
             <?php
             // 質問内容の値が入っているかチェック
                 if($_POST['question'] !== ""){
-                    echo $_POST['question'];
+                    echo nl2br(htmlspecialchars($_POST['question']) );
                 }else{
                     echo "質問内容を入力してください";
                 }
@@ -154,13 +167,14 @@
         </td>
         </tr>
 </table>
+</main>
 
 <footer>
-<!--戻るボタン-->
 <form action="contact.php" method="post">
+<!--戻るボタン-->
     <input type="submit" value="戻る">
-</form>
 </footer>
+</form>
 </canter>
 </body>
 </html>
