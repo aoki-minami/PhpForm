@@ -60,7 +60,7 @@
 
     <!--電話番号のテキストボックス-->
         <tr>
-        <th scope="row">お電話番号</th>
+        <th scope="row">お電話番号　(半角入力)</th>
         <td>
         <!--上三桁-->
             <input type="textbox" name="phon_first" size="1">
@@ -75,7 +75,7 @@
 
     <!--メールアドレス-->
         <tr>
-        <th scope="row">メールアドレス</th>
+        <th scope="row">メールアドレス　(半角入力)</th>
         <td>
         <!--ローカル部-->
             <input type="textbox" name="local">
