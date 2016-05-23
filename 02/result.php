@@ -81,6 +81,8 @@
             }
         // 条件が全て満たせていれば表示
             if($flg_empty === 3 && $flg_half === 3){
+                $flg_empty = 0;
+                $flg_half  = 0;
                 echo $phon[0] . "-" . $phon[1] . "-" . $phon[2];
             }
         ?>
@@ -93,9 +95,24 @@
         <?php
         // メールアドレスの値が入っているかチェック
             if($_POST['local'] !== "" && $_POST['domain'] !== ""){
-                echo $_POST['adress'] . "@" . $_POST['domain'];
+                $flg_empty = 1;
             }else{
                 echo "メールアドレスを入力してください";
+            }
+        // 半角かどうかチェック
+            $len_local  = mb_strlen($_POST['local'], "UTF-8");
+            $len_domain = mb_strlen($_POST['domain'], "UTF-8");
+            $wid_local  = mb_strwidth($_POST['local'], "UTF-8");
+            $wid_domain = mb_strwidth($_POST['domain'], "UTF-8");
+
+            if( $len_local === $wid_local && $len_domain === $wid_domain ){
+                $flg_half = 1;
+            }else{
+                echo "半角で入力してください";
+            }
+        // 条件が全て満たせていれば表示
+            if($flg_empty === 1 && $flg_half === 1){
+                echo $_POST['adress'] . "@" . $_POST['domain'];
             }
         ?>
     </td>
