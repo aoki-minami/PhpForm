@@ -62,13 +62,15 @@
         <tr>
         <th scope="row">お電話番号　(半角入力)</th>
         <td>
-        <!--上三桁-->
+        <!--三桁-->
             <input type="textbox" name="phon[]" size="1">
+        <!--ハイフン-->
             -
         <!--四桁-->
             <input type="textbox" name="phon[]" size="1">
+        <!--ハイフン-->
             -
-        <!--下四桁-->
+        <!--四桁-->
             <input type="textbox" name="phon[]" size="1">
         </td>
         </tr>
@@ -125,8 +127,9 @@
 
 <footer>
     <!--送信ボタン-->
-        <input type="submit" name="submit" value="send">
-
+        <input type="submit" name="send" value="送信">
+    <!--リセットボタン-->
+        <input type="reset" name="reset" value="リセット">
 </footre>
 
 </form>
