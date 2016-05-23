@@ -1,3 +1,8 @@
+<?php
+    // セッション生成
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -8,16 +13,23 @@
 </head>
 
 <body>
-<!--ここから中央揃え-->
-    <center>
 <!--見出し-->
 <header>
     <h1>お問い合わせ</h1>
 </header>
 
+<!--ここから中央揃え-->
+    <center>
+
 <main>
 <table class="type">
 <form action="result.php" method="post">
+
+    <?php
+        //$_SESSTION['name1'] = "";
+        //$_SESSTION['name1'] = "あおき";
+    ?>
+
     <!--姓のテキストボックスを表示 -->
         <tr>
         <th scope="row">姓</th>
@@ -33,20 +45,17 @@
             <input type="textbox" name="name2">
         </td>
         </tr>
-
+        
     <!--性別のラジオボタン-->
         <tr>
         <th scope="row">性別</th>
         <td>
         <!--ラジオボタン（男性）-->
-            <input id="rd_man" type="radio" name="rd" value="男性" checked>
-            <label for="rd_man">男性</label>
+            <input type="radio" name="rd" value="男性" checked>男性
         <!--ラジオボタン（女性）-->
-            <input id="rd_woman" type="radio" name="rd" value="女性">
-            <label for="rd_woman">女性</label>
+            <input type="radio" name="rd" value="女性">女性
         <!--ラジオボタン（不明）-->
-            <input id="rd_unknown" type="radio" name="rd" value="不明">
-            <label for="rd_unknown">不明</label>
+            <input type="radio" name="rd" value="不明">不明
         </td>
         </tr>
 
@@ -60,22 +69,24 @@
 
     <!--電話番号のテキストボックス-->
         <tr>
-        <th scope="row">お電話番号</th>
+        <th scope="row">お電話番号　(半角入力)</th>
         <td>
-        <!--上三桁-->
-            <input type="textbox" name="phon_first" size="1">
+        <!--三桁-->
+            <input type="textbox" name="phon[]" size="1">
+        <!--ハイフン-->
             -
         <!--四桁-->
-            <input type="textbox" name="phon_second" size="1">
+            <input type="textbox" name="phon[]" size="1">
+        <!--ハイフン-->
             -
-        <!--下四桁-->
-            <input type="textbox" name="phon_third" size="1">
+        <!--四桁-->
+            <input type="textbox" name="phon[]" size="1">
         </td>
         </tr>
 
     <!--メールアドレス-->
         <tr>
-        <th scope="row">メールアドレス</th>
+        <th scope="row">メールアドレス　(半角入力)</th>
         <td>
         <!--ローカル部-->
             <input type="textbox" name="local">
@@ -91,14 +102,11 @@
         <th scope="row">どこで知ったか</th>
         <td>
         <!--チェックボックス 1-->
-            <input id="ch_magazin" type="checkbox" name="ch" value="雑誌">
-            <label for="ch_magazin">雑誌</label>
+            <input type="checkbox" name='ch[]' value="雑誌" checked>雑誌
         <!--チェックボックス 2-->
-            <input id="ch_web" type="checkbox" name="ch" value="Web">
-            <label for="ch_web">Web</label>
+            <input type="checkbox" name='ch[]' value="Web">Web
         <!--チェックボックス 3-->
-            <input id="ch_other" type="checkbox" name="ch" value="その他">
-            <label for="ch_other">その他</label>
+            <input type="checkbox" name='ch[]' value="その他">その他
         </td>
         </tr>
 
@@ -125,8 +133,9 @@
 
 <footer>
     <!--送信ボタン-->
-        <input type="submit" name="submit" value="send">
-
+        <input type="submit" name="send" value="送信">
+    <!--リセットボタン-->
+        <input type="reset" name="reset" value="リセット">
 </footre>
 
 </form>

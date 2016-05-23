@@ -1,3 +1,10 @@
+<?php
+    // セッション生成
+    session_start();
+
+    $_SESSTION['name1'] = "";
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -8,10 +15,14 @@
 </head>
 
 <body>
-<h1>確認画面</h1>
+<header>
+    <h1>確認画面</h1>
+</header>
 
 <center>
+<main>
 <table class="type">
+
 <!--姓名のテキストボックスの値を表示-->
     <tr>
     <th scope="row">姓名</th>
@@ -20,6 +31,8 @@
         // 姓の値が入っているかチェック
             if($_POST['name1'] !== ""){
                 echo $_POST['name1'] . " ";
+                $_SESSTION['name1'] = $_POST['name1'];
+                //echo $_SESSTION['name1'];
             }else{
                 echo "姓を入力してください" . " ";
             }
@@ -58,15 +71,32 @@
     <th scope="row">お電話番号</th>
     <td>
         <?php
+            $phon = $_POST['phon'];
+            $flg_empty = 0;
+            $flg_half  = 0;
         // 電話番号が入っているかチェック
-            if($_POST['phon_first'] !== "" &&
-                $_POST['phon_second'] !== "" &&
-                $_POST['phon_third'] !== ""){
-                echo $_POST['phon_first'] . "-" .
-                    $_POST['phon_second'] . "-" .
-                    $_POST['phon_third'];
-            }else{
-                echo "お電話番号を入力してください";
+            foreach($phon as $phon_value){
+                if($phon_value !== ""){
+                        $flg_empty++;
+                }else{
+                    echo "お電話番号を入力してください";
+                    break;
+                }
+            }
+        // 半角かどうかチェック
+            foreach($phon as $phon_value){
+                if(mb_strlen($phon_value, "UTF-8") === mb_strwidth($phon_value, "UTF-8") ){
+                    $flg_half++;
+                }else{
+                    echo "半角で入力してください";
+                    break;
+                }
+            }
+        // 条件が全て満たせていれば表示
+            if($flg_empty === 3 && $flg_half === 3){
+                $flg_empty = 0;
+                $flg_half  = 0;
+                echo $phon[0] . "-" . $phon[1] . "-" . $phon[2];
             }
         ?>
     </td>
@@ -78,9 +108,24 @@
         <?php
         // メールアドレスの値が入っているかチェック
             if($_POST['local'] !== "" && $_POST['domain'] !== ""){
-                echo $_POST['adress'] . "@" . $_POST['domain'];
+                $flg_empty = 1;
             }else{
-                echo "メールアドレスを入力してください" . " ";
+                echo "メールアドレスを入力してください";
+            }
+        // 半角かどうかチェック
+            $len_local  = mb_strlen($_POST['local'], "UTF-8");
+            $len_domain = mb_strlen($_POST['domain'], "UTF-8");
+            $wid_local  = mb_strwidth($_POST['local'], "UTF-8");
+            $wid_domain = mb_strwidth($_POST['domain'], "UTF-8");
+
+            if( $len_local === $wid_local && $len_domain === $wid_domain ){
+                $flg_half = 1;
+            }else{
+                echo "半角で入力してください";
+            }
+        // 条件が全て満たせていれば表示
+            if($flg_empty === 1 && $flg_half === 1){
+                echo $_POST['adress'] . "@" . $_POST['domain'];
             }
         ?>
     </td>
@@ -89,7 +134,15 @@
     <tr>
     <th scope="row">どこで知ったか</th>
     <td>
-        <?php var_dump($_POST['ch1']); ?>
+        <?php
+        // どこで知ったkの値が入っているかチェック
+            $check = $_POST["ch"];
+            foreach($check as $value){
+                if($check !== ""){
+                    echo $value . " ";
+                }
+            }
+        ?>
     </td>
     </tr>
 <!--質問カテゴリ　セレクトボックスで選択-->
@@ -106,7 +159,7 @@
             <?php
             // 質問内容の値が入っているかチェック
                 if($_POST['question'] !== ""){
-                    echo $_POST['question'];
+                    echo nl2br(htmlspecialchars($_POST['question']) );
                 }else{
                     echo "質問内容を入力してください";
                 }
@@ -114,13 +167,14 @@
         </td>
         </tr>
 </table>
+</main>
 
 <footer>
-<!--戻るボタン-->
 <form action="contact.php" method="post">
+<!--戻るボタン-->
     <input type="submit" value="戻る">
-</form>
 </footer>
+</form>
 </canter>
 </body>
 </html>
