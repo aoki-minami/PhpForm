@@ -25,14 +25,17 @@
         $name1 = "";
     // 空の否定判定、値が入っていた場合、　$_POST['name1']　の値を $name1　に代入
         if( !empty($_POST['name1']) ){ $name1 = $_POST['name1']; }
+
     // 名の値の初期化
         $name2 = "";
     // 空の否定判定、値が入っていた場合、　$_POST['name2']　の値を $name2　に代入
         if( !empty($_POST['name2']) ){ $name2 = $_POST['name2']; }
+
     // 住所の値の初期化
         $address = "";
     // 空の否定判定、値が入っていた場合、　$_POST['address']　の値を $address　に代入
         if( !empty($_POST['address']) ){ $address = $_POST['address']; }
+
     // 電話番号の初期化
         $phon1 = "";
         $phon2 = "";
@@ -43,6 +46,7 @@
         if( !empty($_POST['phon2']) ){ $phon2 = $_POST['phon2']; }
     // 空の否定判定、値が入っていた場合、　$_POST['phon3']　の値を $phon3　に代入
         if( !empty($_POST['phon3']) ){ $phon3 = $_POST['phon3']; }
+
     // メールアドレスの値の初期化
         $local = "";
         $domain = "";
@@ -50,15 +54,27 @@
         if( !empty($_POST['local']) ){ $local = $_POST['local']; }
     // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
         if( !empty($_POST['domain']) ){ $domain = $_POST['domain']; }
+
     // 質問内容の値の初期化
         $question = "";
     // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
         if( !empty($_POST['qestion']) ){ $qestion = $_POST['question']; }
+
     // ラジオボタンの checked の状態を空にしておく
         $rd = "";
-    // checked の状態を維持
+    // 空の否定判定、checked の状態を維持
         if( !empty($_POST['rd']) ){$rd = $_POST['rd']; }
         else{$rd = "男性";}
+
+    // チェックボックスの checked の状態を空にしておく
+        $ch1 = "";
+        $ch2 = "";
+        $ch3 = "";
+    //　空の否定判定、checked の状態を維持
+        if( !empty($_POST['ch1']) ){$ch1 = $_POST['ch1']; }
+        else{$ch1 = "雑誌";}
+        if( !empty($_POST['ch2']) ){$ch2 = $_POST['ch2']; }
+        if( !empty($_POST['ch3']) ){$ch3 = $_POST['ch3']; }
     ?>
 
     <!--姓のテキストボックスを表示 -->
@@ -83,13 +99,13 @@
         <td>
         <!--ラジオボタン（男性）-->
             <label><input type="radio" name="rd" value="男性"
-            <?php if($rd == "男性"){echo "checked";} ?> >男性</label>
+                <?php if($rd == "男性"){echo "checked";} ?> >男性</label>
         <!--ラジオボタン（女性）-->
             <label><input type="radio" name="rd" value="女性"
-            <?php if($rd == "女性"){echo "checked";} ?> >女性</label>
+                <?php if($rd == "女性"){echo "checked";} ?> >女性</label>
         <!--ラジオボタン（不明）-->
             <label><input type="radio" name="rd" value="不明"
-            <?php if($rd == "不明"){echo "checked";} ?> >不明</label>
+                <?php if($rd == "不明"){echo "checked";} ?> >不明</label>
         </td>
         </tr>
 
@@ -136,11 +152,14 @@
         <th scope="row">どこで知ったか</th>
         <td>
         <!--チェックボックス 1-->
-            <label><input type="checkbox" name='ch[]' value="雑誌" checked>雑誌</label>
+            <label><input type="checkbox" name='ch[]' value="雑誌"
+                <?php if($ch1 == "雑誌"){echo "checked";} ?> >雑誌</label>
         <!--チェックボックス 2-->
-            <label><input type="checkbox" name='ch[]' value="Web">Web</label>
+            <label><input type="checkbox" name='ch[]' value="Web"
+                <?php if($ch2 == "Web"){echo "checked";} ?> >Web</label>
         <!--チェックボックス 3-->
-            <label><input type="checkbox" name='ch[]' value="その他">その他</label>
+            <label><input type="checkbox" name='ch[]' value="その他"
+                <?php if($ch3 == "その他"){echo "checked";} ?> >その他</label>
         </td>
         </tr>
 

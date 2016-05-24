@@ -160,6 +160,15 @@
                 }
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="ch1"　
+                value="<?php echo htmlspecialchars($check[0]); ?>">
+
+        <input type="hidden" name="ch2"　
+                value="<?php echo htmlspecialchars($check[1]); ?>">
+
+        <input type="hidden" name="ch3"　
+                value="<?php echo htmlspecialchars($check[2]); ?>">
     </td>
     </tr>
 <!--質問カテゴリ　セレクトボックスで選択-->
