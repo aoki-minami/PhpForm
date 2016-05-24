@@ -134,6 +134,11 @@
                 echo $_POST['local'] . "@" . $_POST['domain'];
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="local"　
+                value="<?php echo $_POST['local']; ?>">
+        <input type="hidden" name="domain"　
+                value="<?php echo $_POST['domain']; ?>">
     </td>
     </tr>
 <!--どこで知ったか　チェックボックス-->

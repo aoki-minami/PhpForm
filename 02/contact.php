@@ -37,11 +37,19 @@
         $phon1 = "";
         $phon2 = "";
         $phon3 = "";
-    // 空の否定判定、値が入っていた場合、　$_POST['phon']　の値を $phon1　に代入
+    // 空の否定判定、値が入っていた場合、　$_POST['phon1']　の値を $phon1　に代入
         if( !empty($_POST['phon1']) ){ $phon1 = $_POST['phon1']; }
+    // 空の否定判定、値が入っていた場合、　$_POST['phon2']　の値を $phon2　に代入
         if( !empty($_POST['phon2']) ){ $phon2 = $_POST['phon2']; }
+    // 空の否定判定、値が入っていた場合、　$_POST['phon3']　の値を $phon3　に代入
         if( !empty($_POST['phon3']) ){ $phon3 = $_POST['phon3']; }
-
+    // メールアドレスの値の初期化
+        $local = "";
+        $domain = "";
+    // 空の否定判定、値が入っていた場合、　$_POST['local']　の値を $local　に代入
+        if( !empty($_POST['local']) ){ $local = $_POST['local']; }
+    // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
+        if( !empty($_POST['domain']) ){ $domain = $_POST['domain']; }
     ?>
 
     <!--姓のテキストボックスを表示 -->
@@ -103,11 +111,11 @@
         <th scope="row">メールアドレス　(半角入力)</th>
         <td>
         <!--ローカル部-->
-            <input type="textbox" name="local">
+            <input type="textbox" name="local" value="<?php echo $local; ?>">
         <!--アットマーク-->
             @
         <!--ドメイン-->
-            <input type="textbox" name="domain">
+            <input type="textbox" name="domain" value="<?php echo $domain; ?>">
         </td>
         </tr>
 
