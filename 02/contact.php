@@ -54,8 +54,9 @@
         $question = "";
     // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
         if( !empty($_POST['qestion']) ){ $qestion = $_POST['question']; }
-
+    // ラジオボタンの checked の状態を空にしておく
         $rd = "";
+    // checked の状態を維持
         if( !empty($_POST['rd']) ){$rd = $_POST['rd']; }
         else{$rd = "男性";}
     ?>
@@ -81,11 +82,14 @@
         <th scope="row">性別</th>
         <td>
         <!--ラジオボタン（男性）-->
-            <input type="radio" name="rd" value="男性" <?php if($rd == "男性"){echo "checked";} ?> >男性
+            <label><input type="radio" name="rd" value="男性"
+            <?php if($rd == "男性"){echo "checked";} ?> >男性</label>
         <!--ラジオボタン（女性）-->
-            <input type="radio" name="rd" value="女性" <?php if($rd == "女性"){echo "checked";} ?> >女性
+            <label><input type="radio" name="rd" value="女性"
+            <?php if($rd == "女性"){echo "checked";} ?> >女性</label>
         <!--ラジオボタン（不明）-->
-            <input type="radio" name="rd" value="不明" <?php if($rd == "不明"){echo "checked";} ?> >不明
+            <label><input type="radio" name="rd" value="不明"
+            <?php if($rd == "不明"){echo "checked";} ?> >不明</label>
         </td>
         </tr>
 
@@ -132,11 +136,11 @@
         <th scope="row">どこで知ったか</th>
         <td>
         <!--チェックボックス 1-->
-            <input type="checkbox" name='ch[]' value="雑誌" checked>雑誌
+            <label><input type="checkbox" name='ch[]' value="雑誌" checked>雑誌</label>
         <!--チェックボックス 2-->
-            <input type="checkbox" name='ch[]' value="Web">Web
+            <label><input type="checkbox" name='ch[]' value="Web">Web</label>
         <!--チェックボックス 3-->
-            <input type="checkbox" name='ch[]' value="その他">その他
+            <label><input type="checkbox" name='ch[]' value="その他">その他</label>
         </td>
         </tr>
 
