@@ -1,3 +1,8 @@
+<?php
+    // セッション生成
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -14,24 +19,22 @@
 </header>
 
 <!--ここから中央揃え-->
-<center>
+    <center>
 
 <main>
 <table class="type">
 <form action="result.php" method="post">
 
     <?php
-        $name1 = "";
-        if( !empty($_POST['name1']) ){ $name1 = $_POST['name1']; }
-        $name2 = "";
-        if( !empty($_POST['name2']) ){ $name2 = $_POST['name2']; }
+        //$_SESSTION['name1'] = "";
+        //$_SESSTION['name1'] = "あおき";
     ?>
 
     <!--姓のテキストボックスを表示 -->
         <tr>
         <th scope="row">姓</th>
         <td>
-            <input type="textbox" name="name1" value="<?php echo $name1; ?>">
+            <input type="textbox" name="name1">
         </td>
         </tr>
 
@@ -39,10 +42,10 @@
         <tr>
         <th scope="row">名</th>
         <td>
-            <input type="textbox" name="name2" value="<?php echo $name2; ?>">
+            <input type="textbox" name="name2">
         </td>
         </tr>
-
+        
     <!--性別のラジオボタン-->
         <tr>
         <th scope="row">性別</th>
