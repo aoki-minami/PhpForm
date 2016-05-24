@@ -33,6 +33,15 @@
         $address = "";
     // 空の否定判定、値が入っていた場合、　$_POST['address']　の値を $address　に代入
         if( !empty($_POST['address']) ){ $address = $_POST['address']; }
+    // 電話番号の初期化
+        $phon1 = "";
+        $phon2 = "";
+        $phon3 = "";
+    // 空の否定判定、値が入っていた場合、　$_POST['phon']　の値を $phon1　に代入
+        if( !empty($_POST['phon1']) ){ $phon1 = $_POST['phon1']; }
+        if( !empty($_POST['phon2']) ){ $phon2 = $_POST['phon2']; }
+        if( !empty($_POST['phon3']) ){ $phon3 = $_POST['phon3']; }
+
     ?>
 
     <!--姓のテキストボックスを表示 -->
@@ -77,15 +86,15 @@
         <th scope="row">お電話番号　(半角入力)</th>
         <td>
         <!--三桁-->
-            <input type="textbox" name="phon[]" size="1">
+            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon1; ?>">
         <!--ハイフン-->
             -
         <!--四桁-->
-            <input type="textbox" name="phon[]" size="1">
+            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon2; ?>">
         <!--ハイフン-->
             -
         <!--四桁-->
-            <input type="textbox" name="phon[]" size="1">
+            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon3; ?>">
         </td>
         </tr>
 

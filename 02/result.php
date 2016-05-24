@@ -98,6 +98,13 @@
                 echo $phon[0] . "-" . $phon[1] . "-" . $phon[2];
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="phon1"　
+                value="<?php echo $phon[0]; ?>">
+        <input type="hidden" name="phon2"　
+                value="<?php echo $phon[1]; ?>">
+        <input type="hidden" name="phon3"　
+                value="<?php echo $phon[2]; ?>">
     </td>
     </tr>
 <!--メールアドレスの値を出力-->
@@ -124,7 +131,7 @@
             }
         // 条件が全て満たせていれば表示
             if($flg_empty === 1 && $flg_half === 1){
-                echo $_POST['adress'] . "@" . $_POST['domain'];
+                echo $_POST['local'] . "@" . $_POST['domain'];
             }
         ?>
     </td>
