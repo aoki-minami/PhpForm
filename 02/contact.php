@@ -21,10 +21,18 @@
 <form action="result.php" method="post">
 
     <?php
+    // 姓の値の初期化
         $name1 = "";
+    // 空の否定判定、値が入っていた場合、　$_POST['name1']　の値を $name1　に代入
         if( !empty($_POST['name1']) ){ $name1 = $_POST['name1']; }
+    // 名の値の初期化
         $name2 = "";
+    // 空の否定判定、値が入っていた場合、　$_POST['name2']　の値を $name2　に代入
         if( !empty($_POST['name2']) ){ $name2 = $_POST['name2']; }
+    // 住所の値の初期化
+        $address = "";
+    // 空の否定判定、値が入っていた場合、　$_POST['address']　の値を $address　に代入
+        if( !empty($_POST['address']) ){ $address = $_POST['address']; }
     ?>
 
     <!--姓のテキストボックスを表示 -->
@@ -60,7 +68,7 @@
         <tr>
         <th scope="row">住所</th>
         <td>
-            <input type="textbox" name="adress">
+            <input type="textbox" name="address" value="<?php echo $address; ?>">
         </td>
         </tr>
 

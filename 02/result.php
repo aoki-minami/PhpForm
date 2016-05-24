@@ -34,8 +34,7 @@
                 echo "名を入力してください";
             }
         ?>
-
-    <!---->
+    <!--入力フォームに値を送る-->
         <input type="hidden" name="name1"
                 value="<?php echo htmlspecialchars($_POST['name1']); ?>">
         <input type="hidden" name="name2"
@@ -55,12 +54,15 @@
     <td>
         <?php
         // 住所の値が入っているかチェック
-            if($_POST['adress'] !== ""){
-                echo $_POST['adress'] . " ";
+            if($_POST['address'] !== ""){
+                echo $_POST['address'] . " ";
             }else{
                 echo "住所を入力してください" . " ";
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="address"　
+                value="<?php echo htmlspecialchars($_POST['address']); ?>">
     </td>
     </tr>
 <!--電話番号のテキストボックスの値を出力-->
