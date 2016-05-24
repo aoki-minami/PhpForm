@@ -1,10 +1,3 @@
-<?php
-    // セッション生成
-    session_start();
-
-    $_SESSTION['name1'] = "";
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -22,7 +15,7 @@
 <center>
 <main>
 <table class="type">
-
+<form action="contact.php" method="post">
 <!--姓名のテキストボックスの値を表示-->
     <tr>
     <th scope="row">姓名</th>
@@ -31,18 +24,22 @@
         // 姓の値が入っているかチェック
             if($_POST['name1'] !== ""){
                 echo $_POST['name1'] . " ";
-                $_SESSTION['name1'] = $_POST['name1'];
-                //echo $_SESSTION['name1'];
             }else{
                 echo "姓を入力してください" . " ";
             }
         // 名の値が入っているかチェック
             if($_POST['name2'] !== ""){
-                echo $_POST['name1'] . " ";
+                echo $_POST['name2'] . " ";
             }else{
                 echo "名を入力してください";
             }
         ?>
+
+    <!---->
+        <input type="hidden" name="name1"
+                value="<?php echo htmlspecialchars($_POST['name1']); ?>">
+        <input type="hidden" name="name2"
+                value="<?php echo htmlspecialchars($_POST['name2']); ?>">
     </td>
     </tr>
 <!--性別のラジオボタンの値を表示-->
@@ -170,10 +167,10 @@
 </main>
 
 <footer>
-<form action="contact.php" method="post">
 <!--戻るボタン-->
     <input type="submit" value="戻る">
 </footer>
+
 </form>
 </canter>
 </body>
