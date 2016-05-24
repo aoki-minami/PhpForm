@@ -45,7 +45,10 @@
     <tr>
     <th scope="row">性別</th>
     <td>
-        <?php echo $_POST['rd'] . "<br>"; ?>
+        <?php echo $_POST['rd']; ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="rd"
+                value="<?php echo htmlspecialchars($_POST['rd']); ?>">
     </td>
     </tr>
 <!--住所のテキストボックスの値を表示-->
@@ -100,11 +103,13 @@
         ?>
     <!--入力フォームに値を送る-->
         <input type="hidden" name="phon1"　
-                value="<?php echo $phon[0]; ?>">
+                value="<?php echo htmlspecialchars($phon[0]); ?>">
+
         <input type="hidden" name="phon2"　
-                value="<?php echo $phon[1]; ?>">
+                value="<?php echo htmlspecialchars($phon[1]); ?>">
+
         <input type="hidden" name="phon3"　
-                value="<?php echo $phon[2]; ?>">
+                value="<?php echo htmlspecialchars($phon[2]); ?>">
     </td>
     </tr>
 <!--メールアドレスの値を出力-->
@@ -136,9 +141,10 @@
         ?>
     <!--入力フォームに値を送る-->
         <input type="hidden" name="local"　
-                value="<?php echo $_POST['local']; ?>">
+                value="<?php echo htmlspecialchars($_POST['local']); ?>">
+
         <input type="hidden" name="domain"　
-                value="<?php echo $_POST['domain']; ?>">
+                value="<?php echo htmlspecialchars($_POST['domain']); ?>">
     </td>
     </tr>
 <!--どこで知ったか　チェックボックス-->
@@ -175,6 +181,9 @@
                     echo "質問内容を入力してください";
                 }
             ?>
+        <!--入力フォームに値を送る-->
+            <input type="hidden" name="question"　
+                    value="<?php echo $_POST['question']; ?>">
         </td>
         </tr>
 </table>

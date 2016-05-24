@@ -50,6 +50,14 @@
         if( !empty($_POST['local']) ){ $local = $_POST['local']; }
     // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
         if( !empty($_POST['domain']) ){ $domain = $_POST['domain']; }
+    // 質問内容の値の初期化
+        $question = "";
+    // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
+        if( !empty($_POST['qestion']) ){ $qestion = $_POST['question']; }
+
+        $rd = "";
+        if( !empty($_POST['rd']) ){$rd = $_POST['rd']; }
+        else{$rd = "男性";}
     ?>
 
     <!--姓のテキストボックスを表示 -->
@@ -73,11 +81,11 @@
         <th scope="row">性別</th>
         <td>
         <!--ラジオボタン（男性）-->
-            <input type="radio" name="rd" value="男性" checked>男性
+            <input type="radio" name="rd" value="男性" <?php if($rd == "男性"){echo "checked";} ?> >男性
         <!--ラジオボタン（女性）-->
-            <input type="radio" name="rd" value="女性">女性
+            <input type="radio" name="rd" value="女性" <?php if($rd == "女性"){echo "checked";} ?> >女性
         <!--ラジオボタン（不明）-->
-            <input type="radio" name="rd" value="不明">不明
+            <input type="radio" name="rd" value="不明" <?php if($rd == "不明"){echo "checked";} ?> >不明
         </td>
         </tr>
 
@@ -147,7 +155,8 @@
         <tr>
         <th scope="row">質問内容</th>
         <td>
-            <textarea cols="50" rows="5" name="question"></textarea>
+            <textarea cols="50" rows="5" name="question"
+                        value="<?php echo $qestion; ?>"></textarea>
         </td>
         </tr>
 </table>
