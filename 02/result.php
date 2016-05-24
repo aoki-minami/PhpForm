@@ -1,10 +1,3 @@
-<?php
-    // セッション生成
-    session_start();
-
-    $_SESSTION['name1'] = "";
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -22,7 +15,7 @@
 <center>
 <main>
 <table class="type">
-
+<form action="contact.php" method="post">
 <!--姓名のテキストボックスの値を表示-->
     <tr>
     <th scope="row">姓名</th>
@@ -31,25 +24,31 @@
         // 姓の値が入っているかチェック
             if($_POST['name1'] !== ""){
                 echo $_POST['name1'] . " ";
-                $_SESSTION['name1'] = $_POST['name1'];
-                //echo $_SESSTION['name1'];
             }else{
                 echo "姓を入力してください" . " ";
             }
         // 名の値が入っているかチェック
             if($_POST['name2'] !== ""){
-                echo $_POST['name1'] . " ";
+                echo $_POST['name2'] . " ";
             }else{
                 echo "名を入力してください";
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="name1"
+                value="<?php echo htmlspecialchars($_POST['name1']); ?>">
+        <input type="hidden" name="name2"
+                value="<?php echo htmlspecialchars($_POST['name2']); ?>">
     </td>
     </tr>
 <!--性別のラジオボタンの値を表示-->
     <tr>
     <th scope="row">性別</th>
     <td>
-        <?php echo $_POST['rd'] . "<br>"; ?>
+        <?php echo $_POST['rd']; ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="rd"
+                value="<?php echo htmlspecialchars($_POST['rd']); ?>">
     </td>
     </tr>
 <!--住所のテキストボックスの値を表示-->
@@ -58,12 +57,15 @@
     <td>
         <?php
         // 住所の値が入っているかチェック
-            if($_POST['adress'] !== ""){
-                echo $_POST['adress'] . " ";
+            if($_POST['address'] !== ""){
+                echo $_POST['address'] . " ";
             }else{
                 echo "住所を入力してください" . " ";
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="address"　
+                value="<?php echo htmlspecialchars($_POST['address']); ?>">
     </td>
     </tr>
 <!--電話番号のテキストボックスの値を出力-->
@@ -99,6 +101,15 @@
                 echo $phon[0] . "-" . $phon[1] . "-" . $phon[2];
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="phon1"　
+                value="<?php echo htmlspecialchars($phon[0]); ?>">
+
+        <input type="hidden" name="phon2"　
+                value="<?php echo htmlspecialchars($phon[1]); ?>">
+
+        <input type="hidden" name="phon3"　
+                value="<?php echo htmlspecialchars($phon[2]); ?>">
     </td>
     </tr>
 <!--メールアドレスの値を出力-->
@@ -125,9 +136,15 @@
             }
         // 条件が全て満たせていれば表示
             if($flg_empty === 1 && $flg_half === 1){
-                echo $_POST['adress'] . "@" . $_POST['domain'];
+                echo $_POST['local'] . "@" . $_POST['domain'];
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="local"　
+                value="<?php echo htmlspecialchars($_POST['local']); ?>">
+
+        <input type="hidden" name="domain"　
+                value="<?php echo htmlspecialchars($_POST['domain']); ?>">
     </td>
     </tr>
 <!--どこで知ったか　チェックボックス-->
@@ -143,6 +160,15 @@
                 }
             }
         ?>
+    <!--入力フォームに値を送る-->
+        <input type="hidden" name="ch1"　
+                value="<?php echo htmlspecialchars($check[0]); ?>">
+
+        <input type="hidden" name="ch2"　
+                value="<?php echo htmlspecialchars($check[1]); ?>">
+
+        <input type="hidden" name="ch3"　
+                value="<?php echo htmlspecialchars($check[2]); ?>">
     </td>
     </tr>
 <!--質問カテゴリ　セレクトボックスで選択-->
@@ -164,16 +190,19 @@
                     echo "質問内容を入力してください";
                 }
             ?>
+        <!--入力フォームに値を送る-->
+            <input type="hidden" name="question"　
+                    value="<?php echo $_POST['question']; ?>">
         </td>
         </tr>
 </table>
 </main>
 
 <footer>
-<form action="contact.php" method="post">
 <!--戻るボタン-->
     <input type="submit" value="戻る">
 </footer>
+
 </form>
 </canter>
 </body>
