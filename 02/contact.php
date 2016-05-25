@@ -8,10 +8,12 @@
 </head>
 
 <body>
+
 <header>
 <!--見出し-->
-<h1>お問い合わせ</h1>
+    <h1>お問い合わせ</h1>
 </header>
+
 <center>
 <main>
 <table class="type">
@@ -72,6 +74,10 @@
         $select = "";
     //
         if( !empty($_POST['select']) ){$select = $_POST['select']; }
+
+    //
+        $question = "";
+        if( !empty($_POST['question']) ){$question = $_POST['question']; }
     ?>
 
     <!--姓のテキストボックスを表示 -->
@@ -119,7 +125,7 @@
 
     <!--電話番号のテキストボックス-->
         <tr>
-        <th scope="row">お電話番号　(半角入力)</th>
+        <th scope="row">お電話番号　(半角数字)</th>
         <td>
         <!--三桁-->
             <input type="textbox" name="phon[]" size="1"
@@ -139,7 +145,7 @@
 
     <!--メールアドレス-->
         <tr>
-        <th scope="row">メールアドレス　(半角入力)</th>
+        <th scope="row">メールアドレス　(半角英数字)</th>
         <td>
         <!--ローカル部-->
             <input type="textbox" name="local"
@@ -187,8 +193,8 @@
         <tr>
         <th scope="row">質問内容</th>
         <td>
-            <textarea cols="50" rows="10" name="question">
-            </textarea>
+            <textarea cols="50" rows="10" name="question"><?php echo ereg_replace("<br />","\n",$question); ?>
+            </textarea><br>
         </td>
         </tr>
 </table>

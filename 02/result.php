@@ -70,12 +70,13 @@
     </tr>
 <!--電話番号のテキストボックスの値を出力-->
     <tr>
-    <th scope="row">お電話番号　(半角入力)</th>
+    <th scope="row">お電話番号　(半角数字)</th>
     <td>
         <?php
             $phon = $_POST['phon'];
             $flg_empty = 0;
             $flg_half  = 0;
+            $flg_num   = 0;
         // 電話番号が入っているかチェック
             foreach($phon as $phon_value){
                 if($phon_value !== ""){
@@ -94,10 +95,21 @@
                     break;
                 }
             }
+        // 数字かどうかチェック
+            foreach($phon as $phon_value){
+                if(is_numeric($phon_value) ){
+                    $flg_num++;
+                }else{
+                    echo "数字で入力してください";
+                    break;
+                }
+            }
+
         // 条件が全て満たせていれば表示
-            if($flg_empty === 3 && $flg_half === 3){
+            if($flg_empty === 3 && $flg_half === 3 && $flg_num === 3){
                 $flg_empty = 0;
                 $flg_half  = 0;
+                $flg_num   = 0;
                 echo $phon[0] . "-" . $phon[1] . "-" . $phon[2];
             }
         ?>
@@ -114,7 +126,7 @@
     </tr>
 <!--メールアドレスの値を出力-->
     <tr>
-    <th scope="row">メールアドレス　(半角入力)</th>
+    <th scope="row">メールアドレス　(半角英数字)</th>
     <td>
         <?php
         // メールアドレスの値が入っているかチェック
@@ -195,7 +207,8 @@
             ?>
         <!--入力フォームに値を送る-->
             <input type="hidden" name="question"　
-                    value="<?php echo htmlspecialchars($_POST['question']); ?>">
+                    value="<?php echo nl2br(htmlspecialchars($_POST['question'],
+                                        ENT_QUOTES, 'UTF-8') ); ?>">
         </td>
         </tr>
 </table>
