@@ -8,14 +8,13 @@
 </head>
 
 <body>
-<!--見出し-->
+
 <header>
+<!--見出し-->
     <h1>お問い合わせ</h1>
 </header>
 
-<!--ここから中央揃え-->
 <center>
-
 <main>
 <table class="type">
 <form action="result.php" method="post">
@@ -55,11 +54,6 @@
     // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
         if( !empty($_POST['domain']) ){ $domain = $_POST['domain']; }
 
-    // 質問内容の値の初期化
-        $question = "";
-    // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
-        if( !empty($_POST['qestion']) ){ $qestion = $_POST['question']; }
-
     // ラジオボタンの checked の状態を空にしておく
         $rd = "";
     // 空の否定判定、checked の状態を維持
@@ -75,13 +69,23 @@
         else{$ch1 = "雑誌";}
         if( !empty($_POST['ch2']) ){$ch2 = $_POST['ch2']; }
         if( !empty($_POST['ch3']) ){$ch3 = $_POST['ch3']; }
+
+    //
+        $select = "";
+    //
+        if( !empty($_POST['select']) ){$select = $_POST['select']; }
+
+    //
+        $question = "";
+        if( !empty($_POST['question']) ){$question = $_POST['question']; }
     ?>
 
     <!--姓のテキストボックスを表示 -->
         <tr>
         <th scope="row">姓</th>
         <td>
-            <input type="textbox" name="name1" value="<?php echo $name1; ?>">
+            <input type="textbox" name="name1"
+                    required="required" value="<?php echo $name1; ?>">
         </td>
         </tr>
 
@@ -89,7 +93,8 @@
         <tr>
         <th scope="row">名</th>
         <td>
-            <input type="textbox" name="name2" value="<?php echo $name2; ?>">
+            <input type="textbox" name="name2"
+                    required="required" value="<?php echo $name2; ?>">
         </td>
         </tr>
 
@@ -113,37 +118,43 @@
         <tr>
         <th scope="row">住所</th>
         <td>
-            <input type="textbox" name="address" value="<?php echo $address; ?>">
+            <input type="textbox" name="address"
+                    required="required" value="<?php echo $address; ?>">
         </td>
         </tr>
 
     <!--電話番号のテキストボックス-->
         <tr>
-        <th scope="row">お電話番号　(半角入力)</th>
+        <th scope="row">お電話番号　(半角数字)</th>
         <td>
         <!--三桁-->
-            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon1; ?>">
+            <input type="textbox" name="phon[]" size="1"
+                    required="required" value="<?php echo $phon1; ?>">
         <!--ハイフン-->
             -
         <!--四桁-->
-            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon2; ?>">
+            <input type="textbox" name="phon[]" size="1"
+                    required="required" value="<?php echo $phon2; ?>">
         <!--ハイフン-->
             -
         <!--四桁-->
-            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon3; ?>">
+            <input type="textbox" name="phon[]" size="1"
+                    required="required" value="<?php echo $phon3; ?>">
         </td>
         </tr>
 
     <!--メールアドレス-->
         <tr>
-        <th scope="row">メールアドレス　(半角入力)</th>
+        <th scope="row">メールアドレス　(半角英数字)</th>
         <td>
         <!--ローカル部-->
-            <input type="textbox" name="local" value="<?php echo $local; ?>">
+            <input type="textbox" name="local"
+                    required="required" value="<?php echo $local; ?>">
         <!--アットマーク-->
             @
         <!--ドメイン-->
-            <input type="textbox" name="domain" value="<?php echo $domain; ?>">
+            <input type="textbox" name="domain"
+                    required="required" value="<?php echo $domain; ?>">
         </td>
         </tr>
 
@@ -168,8 +179,12 @@
         <th scope="row">質問カテゴリ</th>
         <td>
             <select name="question_category">
-                <option>商品について</option>
-                <option>その他</option>
+                <option <?php if($select == "商品について"){echo "selected";}?>>
+                    商品について
+                </option>
+                <option <?php if($select == "その他"){echo "selected";}?>>
+                    その他
+                </option>
             </select>
         </td>
         </tr>
@@ -178,8 +193,8 @@
         <tr>
         <th scope="row">質問内容</th>
         <td>
-            <textarea cols="50" rows="5" name="question"
-                        value="<?php echo $qestion; ?>"></textarea>
+            <textarea cols="50" rows="10" name="question"><?php echo ereg_replace("<br />","\n",$question); ?>
+            </textarea><br>
         </td>
         </tr>
 </table>
@@ -187,9 +202,9 @@
 
 <footer>
     <!--送信ボタン-->
-        <input type="submit" name="send" value="送信">
+        <button type="submit" name="send">送信</button>
     <!--リセットボタン-->
-        <input type="reset" name="reset" value="リセット">
+        <button type="reset" name="reset">リセット</button>
 </footre>
 
 </form>
