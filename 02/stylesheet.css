@@ -51,6 +51,14 @@ table.type td{
     padding: 10px;
 }
 
+input, textarea, select{
+    /* 枠線の装飾 */
+    border:1px solid #ccc;
+    /* 背景色 */
+    background-color: #fff;
+     /* Safari,Chrome */
+    -webkit-border-radius: 3px;
+}
 textarea{
     resize: none;
 }
@@ -59,4 +67,12 @@ textarea{
 footer{
     /*境界内の余白を +10px*/
     padding: 10px;
+}
+
+button{
+    /*境界内の余白を +10px*/
+    padding: 10px 30px;
+    /*文字のサイズを　1.4em に指定*/
+    font-size: 1.0em;
+    /**/
 }

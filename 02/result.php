@@ -203,7 +203,7 @@
 
 <footer>
 <!--戻るボタン-->
-    <input type="submit" value="戻る">
+    <button type="submit">戻る</button>
 </footer>
 
 </form>

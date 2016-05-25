@@ -199,9 +199,9 @@
 
 <footer>
     <!--送信ボタン-->
-        <input type="submit" name="send" value="送信">
+        <button type="submit" name="send">送信</button>
     <!--リセットボタン-->
-        <input type="reset" name="reset" value="リセット">
+        <button type="reset" name="reset">リセット</button>
 </footre>
 
 </form>
