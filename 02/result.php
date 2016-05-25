@@ -176,6 +176,9 @@
         <th scope="row">質問カテゴリ</th>
         <td>
             <?php echo $_POST['question_category']; ?>
+        <!--入力フォームに値を送る-->
+            <input type="hidden" name="select"　
+                    value="<?php echo htmlspecialchars($_POST['question_category']); ?>">
         </td>
         </tr>
 <!--質問内容　テキストエリアで入力-->

@@ -75,6 +75,11 @@
         else{$ch1 = "雑誌";}
         if( !empty($_POST['ch2']) ){$ch2 = $_POST['ch2']; }
         if( !empty($_POST['ch3']) ){$ch3 = $_POST['ch3']; }
+
+    //
+        $select = "";
+    //
+        if( !empty($_POST['select']) ){$select = $_POST['select']; }
     ?>
 
     <!--姓のテキストボックスを表示 -->
@@ -168,8 +173,12 @@
         <th scope="row">質問カテゴリ</th>
         <td>
             <select name="question_category">
-                <option>商品について</option>
-                <option>その他</option>
+                <option <?php if($select == "商品について"){echo "selected";}?>>
+                    商品について
+                </option>
+                <option <?php if($select == "その他"){echo "selected";}?>>
+                    その他
+                </option>
             </select>
         </td>
         </tr>
