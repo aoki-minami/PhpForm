@@ -1,6 +1,12 @@
 /* 初期設定
 --------------------------------------------------------------------------*/
-
+body{
+    background-image: url(image.jpg);
+    /* 画像を常に天地左右の中央に配置 */
+    background-position: center center;
+        /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+    background-size: cover;
+}
 
 /* ページの枠組み
 --------------------------------------------------------------------------*/
@@ -9,9 +15,13 @@
 /* ヘッダー
 --------------------------------------------------------------------------*/
 h1{
-    /*見出しを中央揃え*/
-    text-align: center;
-    /**/
+    color: #ffffff;             /* 文字の色 */
+    background-color : #666699; /* 背景の色 */
+    border-style: solid;        /* 枠の種類 */
+    border-color: #999999;      /* 枠の色 */
+    border-width: 0px 50px;     /* 枠の幅 */
+    line-height: 130%;          /* 行の高さ */
+    text-align: center;         /* テキストの配置 */
 }
 
 /* ナビゲーション
@@ -20,41 +30,41 @@ h1{
 /* メインコンテンツ
 --------------------------------------------------------------------------*/
 table.type{
-    /*テキストを左寄せ*/
+    /*　テキストを左寄せ　*/
     text-align: left;
-    /*領域内の左と上に境界線を引く*/
+    /*　領域内の左と上に境界線を引く　*/
     border-left: 2px solid #369;
     border-top: 1px solid #ccc;
-    /*隣接するセルのボーダーを重ねて表示*/
+    /*　隣接するセルのボーダーを重ねて表示　*/
     border-collapse: collapse;
+
+    background-color: #eee;
 }
 
 table.type th{
-    /*テキストの項目の右と下に境界線を引く*/
+    /*　テキストの項目の右と下に境界線を引く　*/
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    /*テキストの幅を 130px　に指定*/
+    /*　テキストの幅を 130px　に指定　*/
     width: 190px;
-    /*境界内の余白を +10px*/
+    /*　境界内の余白を +10px　*/
     padding: 10px
 }
 
 table.type td{
-    /*入力フォームの右と下に境界線を引く*/
+    /*　入力フォームの右と下に境界線を引く　*/
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    /*入力フォームの幅を 375px　に指定*/
+    /*　入力フォームの幅を 375px　に指定　*/
     width: 375px;
-    /*境界内の余白を +10px*/
+    /*　境界内の余白を +10px　*/
     padding: 10px;
 }
 
 input, textarea, select{
     /* 枠線の装飾 */
     border:1px solid #ccc;
-    /* 背景色 */
-    background-color: #fff;
-     /* Safari,Chrome */
+     /* 角を丸くする,Chrome */
     -webkit-border-radius: 3px;
 }
 textarea{
@@ -63,18 +73,18 @@ textarea{
 /* フッター
 --------------------------------------------------------------------------*/
 footer{
-    /*境界内の余白を +10px*/
+    /*　境界内の余白を +10px　*/
     padding: 10px;
 }
 
 button{
-    /*境界内の余白を 縦に 10px 横に　30px に指定*/
+    /*　境界内の余白を 縦に 10px 横に　30px に指定　*/
     padding: 10px 30px;
-    /*文字のサイズを　1.4em に指定*/
+    /*　文字のサイズを　1.4em に指定　*/
     font-size: 1.0em;
-    /*文字の太さを bolder に指定*/
+    /*　文字の太さを bolder に指定　*/
     font-weight:bolder;
-    /* 文字色を色に指定 */
+    /* 文字色を黒色に指定 */
     color: #000;
     /**/
     background-color: #ccc;
@@ -88,4 +98,6 @@ button{
                                     from(#22f),
                                     color-stop(0.5, #fff),
                                     to(#22f));
+    /* 角を丸くする,Chrome */
+   -webkit-border-radius: 20px;
 }

@@ -8,14 +8,11 @@
 </head>
 
 <body>
-<!--見出し-->
 <header>
-    <h1>お問い合わせ</h1>
+<!--見出し-->
+<h1>お問い合わせ</h1>
 </header>
-
-<!--ここから中央揃え-->
 <center>
-
 <main>
 <table class="type">
 <form action="result.php" method="post">
