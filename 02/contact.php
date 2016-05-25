@@ -55,11 +55,6 @@
     // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
         if( !empty($_POST['domain']) ){ $domain = $_POST['domain']; }
 
-    // 質問内容の値の初期化
-        $question = "";
-    // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
-        if( !empty($_POST['qestion']) ){ $qestion = $_POST['question']; }
-
     // ラジオボタンの checked の状態を空にしておく
         $rd = "";
     // 空の否定判定、checked の状態を維持
@@ -86,7 +81,8 @@
         <tr>
         <th scope="row">姓</th>
         <td>
-            <input type="textbox" name="name1" value="<?php echo $name1; ?>">
+            <input type="textbox" name="name1"
+                    required="required" value="<?php echo $name1; ?>">
         </td>
         </tr>
 
@@ -94,7 +90,8 @@
         <tr>
         <th scope="row">名</th>
         <td>
-            <input type="textbox" name="name2" value="<?php echo $name2; ?>">
+            <input type="textbox" name="name2"
+                    required="required" value="<?php echo $name2; ?>">
         </td>
         </tr>
 
@@ -118,7 +115,8 @@
         <tr>
         <th scope="row">住所</th>
         <td>
-            <input type="textbox" name="address" value="<?php echo $address; ?>">
+            <input type="textbox" name="address"
+                    required="required" value="<?php echo $address; ?>">
         </td>
         </tr>
 
@@ -127,15 +125,18 @@
         <th scope="row">お電話番号　(半角入力)</th>
         <td>
         <!--三桁-->
-            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon1; ?>">
+            <input type="textbox" name="phon[]" size="1"
+                    required="required" value="<?php echo $phon1; ?>">
         <!--ハイフン-->
             -
         <!--四桁-->
-            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon2; ?>">
+            <input type="textbox" name="phon[]" size="1"
+                    required="required" value="<?php echo $phon2; ?>">
         <!--ハイフン-->
             -
         <!--四桁-->
-            <input type="textbox" name="phon[]" size="1" value="<?php echo $phon3; ?>">
+            <input type="textbox" name="phon[]" size="1"
+                    required="required" value="<?php echo $phon3; ?>">
         </td>
         </tr>
 
@@ -144,11 +145,13 @@
         <th scope="row">メールアドレス　(半角入力)</th>
         <td>
         <!--ローカル部-->
-            <input type="textbox" name="local" value="<?php echo $local; ?>">
+            <input type="textbox" name="local"
+                    required="required" value="<?php echo $local; ?>">
         <!--アットマーク-->
             @
         <!--ドメイン-->
-            <input type="textbox" name="domain" value="<?php echo $domain; ?>">
+            <input type="textbox" name="domain"
+                    required="required" value="<?php echo $domain; ?>">
         </td>
         </tr>
 
@@ -187,8 +190,8 @@
         <tr>
         <th scope="row">質問内容</th>
         <td>
-            <textarea cols="50" rows="5" name="question"
-                        value="<?php echo $qestion; ?>"></textarea>
+            <textarea cols="50" rows="10" name="question">
+            </textarea>
         </td>
         </tr>
 </table>

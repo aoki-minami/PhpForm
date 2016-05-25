@@ -195,7 +195,7 @@
             ?>
         <!--入力フォームに値を送る-->
             <input type="hidden" name="question"　
-                    value="<?php echo $_POST['question']; ?>">
+                    value="<?php echo htmlspecialchars($_POST['question']); ?>">
         </td>
         </tr>
 </table>
