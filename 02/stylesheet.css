@@ -1,7 +1,7 @@
 /* 初期設定
 --------------------------------------------------------------------------*/
 body{
-    background-image: url(image.jpg);
+    /*background-image: url(image.jpg);*/
     /* 画像を常に天地左右の中央に配置 */
     background-position: center center;
         /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
@@ -37,8 +37,6 @@ table.type{
     border-top: 1px solid #ccc;
     /*　隣接するセルのボーダーを重ねて表示　*/
     border-collapse: collapse;
-
-    background-color: #eee;
 }
 
 table.type th{
@@ -48,7 +46,9 @@ table.type th{
     /*　テキストの幅を 130px　に指定　*/
     width: 190px;
     /*　境界内の余白を +10px　*/
-    padding: 10px
+    padding: 10px;
+
+    background-color: #eee;
 }
 
 table.type td{
@@ -66,6 +66,8 @@ input, textarea, select{
     border:1px solid #ccc;
      /* 角を丸くする,Chrome */
     -webkit-border-radius: 3px;
+
+    background-color: #eee
 }
 textarea{
     resize: none;
