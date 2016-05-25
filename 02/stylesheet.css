@@ -12,8 +12,6 @@ h1{
     /*見出しを中央揃え*/
     text-align: center;
     /**/
-
-
 }
 
 /* ナビゲーション
@@ -70,9 +68,24 @@ footer{
 }
 
 button{
-    /*境界内の余白を +10px*/
+    /*境界内の余白を 縦に 10px 横に　30px に指定*/
     padding: 10px 30px;
     /*文字のサイズを　1.4em に指定*/
     font-size: 1.0em;
+    /*文字の太さを bolder に指定*/
+    font-weight:bolder;
+    /* 文字色を色に指定 */
+    color: #000;
     /**/
+    background-color: #ccc;
+    /* ボーダーをなくす */
+    border-style: none;
+    /* ボタンの影の指定
+     * 影の横幅を2px 縦長を2px ぼかしを3px 広がりを1px 色を#666（グレー）に指定 */
+    box-shadow: 2px 2px 3px 1px #666;
+    /* グラデーションの指定 */
+    background: -webkit-gradient(linear, left bottom, left top,
+                                    from(#22f),
+                                    color-stop(0.5, #fff),
+                                    to(#22f));
 }
