@@ -16,7 +16,8 @@
 <main>
 <table class="type">
 <form action="contact.php" method="post">
-<!--姓名のテキストボックスの値を表示-->
+
+<!-- 姓名のテキストボックスの値を表示 ---------------------------------------------->
     <tr>
     <th scope="row">姓名</th>
     <td>
@@ -34,14 +35,15 @@
                 echo "名を入力してください";
             }
         ?>
-    <!--入力フォームに値を送る-->
+    <!-- 入力フォームに値を送る -->
         <input type="hidden" name="name1"
                 value="<?php echo htmlspecialchars($_POST['name1']); ?>">
         <input type="hidden" name="name2"
                 value="<?php echo htmlspecialchars($_POST['name2']); ?>">
     </td>
     </tr>
-<!--性別のラジオボタンの値を表示-->
+
+<!-- 性別のラジオボタンの値を表示 ------------------------------------------------->
     <tr>
     <th scope="row">性別</th>
     <td>
@@ -51,7 +53,8 @@
                 value="<?php echo htmlspecialchars($_POST['rd']); ?>">
     </td>
     </tr>
-<!--住所のテキストボックスの値を表示-->
+
+<!-- 住所のテキストボックスの値を表示 ---------------------------------------------->
     <tr>
     <th scope="row">住所</th>
     <td>
@@ -68,15 +71,18 @@
                 value="<?php echo htmlspecialchars($_POST['address']); ?>">
     </td>
     </tr>
-<!--電話番号のテキストボックスの値を出力-->
+
+<!-- 電話番号のテキストボックスの値を出力 ------------------------------------------->
     <tr>
     <th scope="row">お電話番号　(半角数字)</th>
     <td>
         <?php
+        // 初期化
             $phon = $_POST['phon'];
             $flg_empty = 0;
             $flg_half  = 0;
             $flg_num   = 0;
+
         // 電話番号が入っているかチェック
             foreach($phon as $phon_value){
                 if($phon_value !== ""){
@@ -86,6 +92,7 @@
                     break;
                 }
             }
+
         // 半角かどうかチェック
             foreach($phon as $phon_value){
                 if(mb_strlen($phon_value, "UTF-8") === mb_strwidth($phon_value, "UTF-8") ){
@@ -95,6 +102,7 @@
                     break;
                 }
             }
+
         // 数字かどうかチェック
             foreach($phon as $phon_value){
                 if(is_numeric($phon_value) ){
@@ -124,7 +132,8 @@
                 value="<?php echo htmlspecialchars($phon[2]); ?>">
     </td>
     </tr>
-<!--メールアドレスの値を出力-->
+
+<!-- メールアドレスの値を出力 ----------------------------------------------------->
     <tr>
     <th scope="row">メールアドレス　(半角英数字)</th>
     <td>
@@ -135,6 +144,7 @@
             }else{
                 echo "メールアドレスを入力してください";
             }
+
         // 半角かどうかチェック
             $len_local  = mb_strlen($_POST['local'], "UTF-8");
             $len_domain = mb_strlen($_POST['domain'], "UTF-8");
@@ -148,6 +158,8 @@
             }
         // 条件が全て満たせていれば表示
             if($flg_empty === 1 && $flg_half === 1){
+                $flg_empty = 0;
+                $flg_half  = 0;
                 echo $_POST['local'] . "@" . $_POST['domain'];
             }
         ?>
@@ -159,7 +171,8 @@
                 value="<?php echo htmlspecialchars($_POST['domain']); ?>">
     </td>
     </tr>
-<!--どこで知ったか　チェックボックス-->
+
+<!-- どこで知ったか　チェックボックス ------------------------------------------------>
     <tr>
     <th scope="row">どこで知ったか</th>
     <td>
@@ -169,7 +182,13 @@
             foreach($check as $value){
                 if($check !== ""){
                     echo $value . " ";
+                }else{
+                    $flg_empty++;
                 }
+            }
+
+            if($flg_empty === 3){
+                echo "どこで知ったかチェックをいれてください";
             }
         ?>
     <!--入力フォームに値を送る-->
@@ -183,7 +202,8 @@
                 value="<?php echo htmlspecialchars($check[2]); ?>">
     </td>
     </tr>
-<!--質問カテゴリ　セレクトボックスで選択-->
+
+<!-- 質問カテゴリ　セレクトボックスで選択 --------------------------------------------->
         <tr>
         <th scope="row">質問カテゴリ</th>
         <td>
@@ -193,7 +213,8 @@
                     value="<?php echo htmlspecialchars($_POST['question_category']); ?>">
         </td>
         </tr>
-<!--質問内容　テキストエリアで入力-->
+
+<!-- 質問内容　テキストエリアで入力 ------------------------------------------------>
         <tr>
         <th scope="row">質問内容</th>
         <td>
