@@ -17,7 +17,6 @@
 <main>
 
 <?php
-
 function error($no){
     if($no === 1){ echo "姓を入力してください" . " ";}
     if($no === 2){ echo "名を入力してください" . " ";}
@@ -28,12 +27,8 @@ function error($no){
     if($no === 7){ echo "メールアドレスを入力してください";}
     if($no === 8){ echo "どこで知ったかチェックをいれてください";}
     if($no === 9){ echo "質問内容を入力してください";}
-
 }
-
- ?>
-
-
+?>
 
 <table class="type">
 
@@ -190,12 +185,13 @@ function error($no){
         // どこで知ったkの値が入っているかチェック
             $check = $_POST["ch"];
             foreach($check as $value){
-                if($check !== "" ){
+                if(isset($check) ){
                     echo $value . " ";
                 }else{
                     $flg_empty++;
                 }
             }
+
             if($flg_empty === 3){
                 error(8);
             }
