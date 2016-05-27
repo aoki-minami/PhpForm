@@ -76,7 +76,6 @@
         <?php
         // 住所の値の初期化
             $address = "";
-
         // 空の否定判定、値が入っていた場合、　$_POST['address']　の値を $address　に代入
             if( !empty($_POST['address']) ){ $address = $_POST['address']; }
         ?>
@@ -92,13 +91,10 @@
             $phon1 = "";
             $phon2 = "";
             $phon3 = "";
-
         // 空の否定判定、値が入っていた場合、　$_POST['phon1']　の値を $phon1　に代入
             if( !empty($_POST['phon1']) ){ $phon1 = $_POST['phon1']; }
-
         // 空の否定判定、値が入っていた場合、　$_POST['phon2']　の値を $phon2　に代入
             if( !empty($_POST['phon2']) ){ $phon2 = $_POST['phon2']; }
-
         // 空の否定判定、値が入っていた場合、　$_POST['phon3']　の値を $phon3　に代入
             if( !empty($_POST['phon3']) ){ $phon3 = $_POST['phon3']; }
         ?>
@@ -123,10 +119,8 @@
         // メールアドレスの値の初期化
             $local = "";
             $domain = "";
-
         // 空の否定判定、値が入っていた場合、　$_POST['local']　の値を $local　に代入
             if( !empty($_POST['local']) ){ $local = $_POST['local']; }
-
         // 空の否定判定、値が入っていた場合、　$_POST['domain']　の値を $domain　に代入
             if( !empty($_POST['domain']) ){ $domain = $_POST['domain']; }
         ?>
@@ -149,7 +143,6 @@
             $ch1 = "";
             $ch2 = "";
             $ch3 = "";
-
         //　空の否定判定、checked の状態を維持
             if( !empty($_POST['ch1']) ){$ch1 = $_POST['ch1']; }
             else{$ch1 = "雑誌";}
@@ -175,7 +168,6 @@
         <?php
         // セレクトボックスの値を初期化
             $select = "";
-
         //　空の否定判定、値が入っていた場合、　$_POST['select']　の値を $select　に代入
             if( !empty($_POST['select']) ){$select = $_POST['select']; }
          ?>
@@ -192,7 +184,6 @@
         <?php
         // 質問内容の値を初期化
             $question = "";
-
         // 空の否定判定、値が入っていた場合、　$_POST['question']　の値を $question　に代入
             if( !empty($_POST['question']) ){$question = $_POST['question']; }
         ?>
@@ -216,7 +207,7 @@
         <button type="submit" name="send">送信</button>
 
     <!-- リセットボタン -->
-        <button type="reset" name="reset" onclick="location.href='http://localhost/PhpFrom/02/contact.php' ">リセット</button>
+        <button type="reset" name="reset" onclick="location.href='contact.php' ">リセット</button>
 </center>
 </footre>
 <!-- ここまで　footer の処理 -->

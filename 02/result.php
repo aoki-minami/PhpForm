@@ -15,6 +15,26 @@
 <form action="contact.php" method="post">
 
 <main>
+
+<?php
+
+function error($no){
+    if($no === 1){ echo "姓を入力してください" . " ";}
+    if($no === 2){ echo "名を入力してください" . " ";}
+    if($no === 3){ echo "住所を入力してください";}
+    if($no === 4){ echo "お電話番号を入力してください";}
+    if($no === 5){ echo "半角で入力してください";}
+    if($no === 6){ echo "数字で入力してください";}
+    if($no === 7){ echo "メールアドレスを入力してください";}
+    if($no === 8){ echo "どこで知ったかチェックをいれてください";}
+    if($no === 9){ echo "質問内容を入力してください";}
+
+}
+
+ ?>
+
+
+
 <table class="type">
 
 <!-- 姓名のテキストボックスの値を表示 -->
@@ -22,18 +42,19 @@
         <th scope="row">姓名</th>
         <td>
         <?php
+
         // 姓の値が入っているかチェック
-            if(isset($_POST['name1']) ){
+            if($_POST['name1'] !== "" ){
                 echo $_POST['name1'] . " ";
             }else{
-                echo "姓を入力してください" . " ";
+                error(1);
             }
 
         // 名の値が入っているかチェック
-            if(isset($_POST['name2']) ){
+            if($_POST['name2'] !== "" ){
                 echo $_POST['name2'] . " ";
             }else{
-                echo "名を入力してください";
+                error(2);
             }
         ?>
     <!-- 入力フォームに値を送る -->
@@ -58,10 +79,10 @@
         <td>
         <?php
         // 住所の値が入っているかチェック
-            if(isset($_POST['address']) ){
+            if($_POST['address'] !== "" ){
                 echo $_POST['address'] . " ";
             }else{
-                echo "住所を入力してください" . " ";
+                error(3);
             }
         ?>
     <!--入力フォームに値を送る-->
@@ -82,10 +103,10 @@
 
         // 電話番号が入っているかチェック
             foreach($phon as $phon_value){
-                if(isset($phon_value) ){
+                if($phon_value !== "" ){
                         $flg_empty++;
                 }else{
-                    echo "お電話番号を入力してください";
+                    error(4);
                     break;
                 }
             }
@@ -95,18 +116,20 @@
                 if(mb_strlen($phon_value, "UTF-8") === mb_strwidth($phon_value, "UTF-8") ){
                     $flg_half++;
                 }else{
-                    echo "半角で入力してください";
+                    error(5);
                     break;
                 }
             }
 
         // 数字かどうかチェック
-            foreach($phon as $phon_value){
-                if(is_numeric($phon_value) ){
-                    $flg_num++;
-                }else{
-                    echo "数字で入力してください";
-                    break;
+            if($flg_empty === 3){
+                foreach($phon as $phon_value){
+                    if(is_numeric($phon_value) ){
+                        $flg_num++;
+                    }else{
+                        error(6);
+                        break;
+                    }
                 }
             }
 
@@ -131,24 +154,21 @@
         <td>
         <?php
         // メールアドレスの値が入っているかチェック
-            if(isset($_POST['local']) && isset($_POST['domain']) ){
+            if($_POST['local'] !== "" && $_POST['domain'] !== "" ){
                 $flg_empty = 1;
             }else{
-                echo "メールアドレスを入力してください";
+                error(7);
             }
-
         // 半角かどうかチェック
             $len_local  = mb_strlen($_POST['local'], "UTF-8");
             $len_domain = mb_strlen($_POST['domain'], "UTF-8");
             $wid_local  = mb_strwidth($_POST['local'], "UTF-8");
             $wid_domain = mb_strwidth($_POST['domain'], "UTF-8");
-
             if( $len_local === $wid_local && $len_domain === $wid_domain ){
                 $flg_half = 1;
             }else{
-                echo "半角で入力してください";
+                error(5);
             }
-
         // 条件が全て満たせていれば表示
             if($flg_empty === 1 && $flg_half === 1){
                 $flg_empty = 0;
@@ -170,14 +190,14 @@
         // どこで知ったkの値が入っているかチェック
             $check = $_POST["ch"];
             foreach($check as $value){
-                if($check !== ""){
+                if($check !== "" ){
                     echo $value . " ";
                 }else{
                     $flg_empty++;
                 }
             }
             if($flg_empty === 3){
-                echo "どこで知ったかチェックをいれてください";
+                error(8);
             }
         ?>
     <!--入力フォームに値を送る-->
@@ -203,11 +223,11 @@
             <td>
             <?php
             // 質問内容の値が入っているかチェック
-                if(isset($_POST['question']) ){
+                if($_POST['question'] !== "" ){
                 // 改行文字の前に HTML の改行タグを挿入する
                     echo nl2br($_POST['question'] );
                 }else{
-                    echo "質問内容を入力してください";
+                    error(9);
                 }
             ?>
         <!--入力フォームに値を送る-->
