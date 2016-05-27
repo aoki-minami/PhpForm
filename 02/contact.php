@@ -25,6 +25,7 @@
         <?php
         // 姓の値の初期化
             $name1 = "";
+
         // 空の否定判定、値が入っていた場合、　$_POST['name1']　の値を $name1　に代入
             if( !empty($_POST['name1']) ){ $name1 = $_POST['name1']; }
         ?>
@@ -40,6 +41,7 @@
         <?php
         // 名の値の初期化
             $name2 = "";
+
         // 空の否定判定、値が入っていた場合、　$_POST['name2']　の値を $name2　に代入
             if( !empty($_POST['name2']) ){ $name2 = $_POST['name2']; }
         ?>
@@ -53,6 +55,7 @@
         <?php
         // ラジオボタンの checked の状態を空にしておく
             $rd = "";
+
         // 空の否定判定、checked の状態を維持
             if( !empty($_POST['rd']) ){$rd = $_POST['rd']; }
             else{$rd = "男性";}
@@ -216,7 +219,7 @@
         <button type="submit" name="send">送信</button>
 
     <!-- リセットボタン -->
-        <button type="reset" name="reset" onclick="location.href='http://localhost/PhpFrom/02/contact.php' ">リセット</button>
+        <button type="reset" name="reset" onclick="location.href='contact.php' ">リセット</button>
 </center>
 </footre>
 <!-- ここまで　footer の処理 -->
